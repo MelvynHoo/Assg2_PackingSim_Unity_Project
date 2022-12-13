@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class VegatableInteractable : MonoBehaviour
+public class HighlightInteractable : MonoBehaviour
 {
     // Start is called before the first frame update
     public void OnHover()
