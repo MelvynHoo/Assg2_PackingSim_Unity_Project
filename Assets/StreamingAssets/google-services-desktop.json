@@ -1,42 +1,34 @@
 {
   "project_info": {
-    "project_number": "",
-    "firebase_url": "",
-    "project_id": "",
-    "storage_bucket": ""
+    "project_number": "226734249363",
+    "firebase_url": "https://dda-assg2-packingsim-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "dda-assg2-packingsim",
+    "storage_bucket": "dda-assg2-packingsim.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "",
+        "mobilesdk_app_id": "1:226734249363:android:7b7adc4f599be084ba8466",
         "android_client_info": {
-          "package_name": ""
+          "package_name": "dda.eastandwest.packingsim"
         }
       },
       "oauth_client": [
         {
-          "client_id": "",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "",
-            "certificate_hash": ""
-          }
-        },
-        {
-          "client_id": "",
+          "client_id": "226734249363-fcbh3rir90bnv8bo6hl4mj96o8munmtf.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": ""
+          "current_key": "AIzaSyDELNMt7AgNDwQtG-vySN_aYXz5qcVIOUk"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "",
+              "client_id": "226734249363-fcbh3rir90bnv8bo6hl4mj96o8munmtf.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
