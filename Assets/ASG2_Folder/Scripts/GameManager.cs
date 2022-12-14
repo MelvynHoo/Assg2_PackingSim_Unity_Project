@@ -4,15 +4,31 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    string itemOne;
+    int countItemOne;
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        
     }
 
     // Update is called once per frame
-    void Update()
+    public void Update()
     {
+        itemOne = StaticController.itemOne;
+        //Debug.Log(itemOne);
+        ItemOneScoring();
+    }
+
+    public void ItemOneScoring()
+    {
+        //Debug.Log("Inside item one scoring:" + itemOne);
+        
+        if (itemOne == "ItemOneGrab")
+        {
+            countItemOne += 10;
+            StaticController.itemOne = "";
+        }
+        Debug.Log("Count item one" + countItemOne);
         
     }
 }

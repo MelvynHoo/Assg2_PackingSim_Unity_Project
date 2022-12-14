@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2036240675715104928}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: BulletOrigin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4499655644872311653}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: HoldPosition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -74,7 +74,7 @@ GameObject:
   - component: {fileID: 4499655645877229410}
   - component: {fileID: 4499655645877229411}
   - component: {fileID: 4499655645877228700}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cube (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -173,7 +173,7 @@ GameObject:
   - component: {fileID: 4499655646560778778}
   - component: {fileID: 4499655646560778779}
   - component: {fileID: 4499655646560778782}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -16,7 +16,9 @@ public class BoxCheck : MonoBehaviour
     // Update is called once per frame
     public void socketCheck()
     {
-        IXRSelectInteractable objName = socketItemOne.GetOldestInteractableSelected();
-        Debug.Log(objName.transform.name + " in socket of " + transform.name);
+        IXRSelectInteractable itemOne = socketItemOne.GetOldestInteractableSelected();
+        //Debug.Log(itemOne.transform.name + " in socket of " + transform.name);
+        //Debug.Log(" name of itemone " + itemOne.ToString());
+        StaticController.itemOne = itemOne.transform.name;
     }
 }
