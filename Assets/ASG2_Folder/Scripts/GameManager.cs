@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     public void Update()
     {
-        itemOne = StaticController.itemOne;
+        //itemOne = StaticController.itemOne;
         //Debug.Log(itemOne);
         ItemOneScoring();
     }
@@ -23,12 +23,17 @@ public class GameManager : MonoBehaviour
     {
         //Debug.Log("Inside item one scoring:" + itemOne);
         
-        if (itemOne == "ItemOneGrab")
+        if (itemOne == "Gaming_Keyboard")
         {
             countItemOne += 10;
-            StaticController.itemOne = "";
+            //StaticController.itemOne = "";
         }
-        Debug.Log("Count item one" + countItemOne);
+        if (itemOne == "Gaming_Keyboard")
+        {
+            countItemOne += 10;
+            //StaticController.itemOne = "";
+        }
+        //Debug.Log("Count item one" + countItemOne);
         
     }
 }

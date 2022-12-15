@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class StaticController : MonoBehaviour
 {
-    public static string itemOne;
+    public static bool boolBoxToSocket;
 
     private void Update()
     {
-        //Debug.Log("Inside static Controller:" + itemOne);
+        //Debug.Log("Inside Static Controller BoxToSocket:" + boolBoxToSocket);
     }
 }

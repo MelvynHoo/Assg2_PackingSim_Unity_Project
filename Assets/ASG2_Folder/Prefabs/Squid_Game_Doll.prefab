@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 2014900596846502360}
   m_Layer: 7
   m_Name: Squid_Game_Doll
-  m_TagString: Untagged
+  m_TagString: ItemTwoTag
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
