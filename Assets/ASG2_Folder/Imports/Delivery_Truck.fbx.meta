@@ -1,0 +1,321 @@
+fileFormatVersion: 2
+guid: 97614fe54503e4747879196c439c4d46
+ModelImporter:
+  serializedVersion: 21300
+  internalIDToNameTable: []
+  externalObjects:
+  - first:
+      type: UnityEngine:Cubemap
+      assembly: UnityEngine.CoreModule
+      name: diffuse_cube
+    second: {fileID: 8900000, guid: 59ae7e8447f19f246a935a9ac8042109, type: 3}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CargoHold
+    second: {fileID: 2100000, guid: 1b482efea20b349498966f5fd17ef38c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TruckBack
+    second: {fileID: 2100000, guid: 4d8d2b5d3f1f47d499e98a0c0294435a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TruckDifferential
+    second: {fileID: 2100000, guid: 87cf5e2a71ae1434dba65fd8365bcbc0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TruckDoors
+    second: {fileID: 2100000, guid: 3991bda4be3a667448fe5fefecf10727, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TruckFront
+    second: {fileID: 2100000, guid: dcd41872db2c1ff4abcbcbb93cd40d78, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TruckFrontDifferential
+    second: {fileID: 2100000, guid: 4f337ea065a0c044a9ccbe244023bb7a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: WheelBack
+    second: {fileID: 2100000, guid: b375f78b40adebd40ba79b2c11d739ab, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: WheelFront
+    second: {fileID: 2100000, guid: 42bec1cd0a1445949b543b167afc0652, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Back2_Metallic
+    second: {fileID: 2800000, guid: cb3b36c19cf307643b5992764caa0e38, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Back2_Roughness
+    second: {fileID: 2800000, guid: 512880373d084c1448709586c19da294, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Back2_low_Back2_BaseColor
+    second: {fileID: 2800000, guid: 216cebc7166657541ba7d3e5f3215bba, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Back2_low_Back2_Normal
+    second: {fileID: 2800000, guid: 78db73f81e5fd5e4b9ccacebf9a54d06, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: BackParts_Metallic
+    second: {fileID: 2800000, guid: 9e81b86f7888d384d8d006b62c86fa64, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: BackParts_Roughness
+    second: {fileID: 2800000, guid: e957293f34269ce4caa43689fe9817bc, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: BackParts_low_BackParts1_BaseColor
+    second: {fileID: 2800000, guid: 8af4bee5599f0fd488071f5fa89084c4, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: BackParts_low_BackParts1_Normal
+    second: {fileID: 2800000, guid: d29c3fe0ced214a4682c3af8e2009fbb, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Caja_BaseColor
+    second: {fileID: 2800000, guid: 585df31accc1dde478a1a2e41db5228c, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Caja_Metallic
+    second: {fileID: 2800000, guid: 680408a6018921a42915bccc6936a905, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Caja_Normal
+    second: {fileID: 2800000, guid: 75de6220279717346ba1c6a9dcec030c, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Caja_Roughness
+    second: {fileID: 2800000, guid: a8160be3e54b299419bd84405f88148b, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Interior_Metallic
+    second: {fileID: 2800000, guid: d9c611b1f126794499944a27fa1d4883, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Interior_Roughness
+    second: {fileID: 2800000, guid: c6b03b8f6bca1dd44b2e72874ded1ad7, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Interior_low_Interior_BaseColor
+    second: {fileID: 2800000, guid: 9358742bd27e17f499f3be29fbcda109, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Interior_low_Interior_Normal
+    second: {fileID: 2800000, guid: 90952ce287c7edc43bdfe0bc71c616c3, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Puerta_BaseColor
+    second: {fileID: 2800000, guid: fda9a3fa4a237c84aab433a21148fc61, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Puerta_Metallic
+    second: {fileID: 2800000, guid: 2dab7d8c4225e6b42b227738ee986db6, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Puerta_Occlusion
+    second: {fileID: 2800000, guid: 47e84635dde252745b7fc827c483ca02, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Puerta_Roughness
+    second: {fileID: 2800000, guid: 696840ab48aaffe4bb7dec71712bbdd4, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: WheelBack_Metallic
+    second: {fileID: 2800000, guid: 91098bf6fd799a944b5c0232bb892a85, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: WheelBack_Roughness
+    second: {fileID: 2800000, guid: 68746a2ddc57ed6478cc1cb97b2740cc, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: WheelBack_low_Back_Wheels_BaseColor
+    second: {fileID: 2800000, guid: 325d8aeb3400dc546b7fb9de82cb97df, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: WheelBack_low_Back_Wheels_Normal
+    second: {fileID: 2800000, guid: 8ef2908cb53b8a341be4a5efa5e7543b, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: front_Occlusion
+    second: {fileID: 2800000, guid: a90f2314e33faa74fa601e13530679fd, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: front_Roughness
+    second: {fileID: 2800000, guid: 8aa8a6c51109df4429d3eba51dc3ca6b, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: front_low_Exterior_BaseColor
+    second: {fileID: 2800000, guid: af1b9cea2f4088c4fb3ccdc2f5d846be, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: front_low_Exterior_Normal
+    second: {fileID: 2800000, guid: f694e04dc73d25749a28cc6c9012cb4b, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: ibl_brdf_lut
+    second: {fileID: 2800000, guid: 4909e107f7a5c30469a9b8245eb93fae, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: wheelV01_low_Front_Wheel_BaseColor
+    second: {fileID: 2800000, guid: 92e98f152cba5744e90f6acd37119bb5, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: wheelV01_low_Front_Wheel_Normal
+    second: {fileID: 2800000, guid: 55f42976d19f7784ab34b06a4f005574, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: wheel_Metallic
+    second: {fileID: 2800000, guid: dbffed63626fe3747b441cac18065b41, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: wheel_Occlusion
+    second: {fileID: 2800000, guid: 47f5b67e4b9fa1f48b5b602b6eb3afb4, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: wheel_Roughness
+    second: {fileID: 2800000, guid: 81bd4fde6e080974c95853eccc1c92f1, type: 3}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    removeConstantScaleCurves: 1
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    nodeNameCollisionStrategy: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  remapMaterialsIfMaterialImportModeIsNone: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
