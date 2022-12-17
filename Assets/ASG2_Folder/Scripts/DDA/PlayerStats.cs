@@ -21,8 +21,8 @@ public class PlayerStats
 
     //Properties of our playerstats
     public string userName;
-    public float totalTimeSpent;
-    public float totalMoney;
+    public int noOfboxDelivered;
+    public int noOfMoneyEarned;
     public long updatedOn;
     public long createdOn;
 
@@ -38,11 +38,11 @@ public class PlayerStats
     /// <param name="userName"></param>
     /// <param name="totalMoney"></param>
     /// <param name="totalTimeSpent"></param>
-    public PlayerStats(string userName, float totalMoney, float totalTimeSpent)
+    public PlayerStats(string userName, int noOfMoneyEarned, int noOfboxDelivered)
     {
         this.userName = userName;
-        this.totalMoney = totalMoney;
-        this.totalTimeSpent = totalTimeSpent;
+        this.noOfMoneyEarned = noOfMoneyEarned;
+        this.noOfboxDelivered = noOfboxDelivered;
     }
 
     /// <summary>

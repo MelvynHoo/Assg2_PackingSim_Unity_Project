@@ -84,7 +84,7 @@ public class MyAuthManager : MonoBehaviour
                 registerValidation.gameObject.SetActive(false);
                 string username = usernameRegisterInput.text;
                 //CreateNewPlayer(newPlayer.UserId, username, username, newPlayer.Email);
-                await CreateNewPlayer(newPlayer.UserId, username, username, newPlayer.Email);
+                await CreateNewPlayer(newPlayer.UserId, username, newPlayer.Email);
                 await UpdatePlayerDisplayName(username); //update user's display name in authenticate service 
                 SceneManager.LoadScene(1);
             }
@@ -173,9 +173,9 @@ public class MyAuthManager : MonoBehaviour
     /// <param name="userName"></param>
     /// <param name="email"></param>
     /// <returns></returns>
-    public async Task CreateNewPlayer(string uuid, string displayName, string userName, string email)
+    public async Task CreateNewPlayer(string uuid, string displayName, string email)
     {
-        Player newPlayer = new Player(displayName, userName, email);
+        Player newPlayer = new Player(displayName, email);
         Debug.LogFormat("Player Details: {0}", newPlayer.PrintPlayer());
 
         //root/players/$uuid

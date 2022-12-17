@@ -46,8 +46,7 @@ public class FirebaseManager : MonoBehaviour
     /// <param name="totalMoney"></param>
     /// <param name="time"></param>
     /// <param name="displayname"></param>
-    public void UpdatePlayerStats(string uuid, float money, float time, string displayName, int tier1Count, int tier2Count, int tier1Cost, 
-        int tier2Cost, float tier1Profit, float tier2Profit, int upgradeCost, float hitPower, float rateOfMoney)
+    public void UpdatePlayerStats(string uuid, int money, int boxes, string displayName)
     {
         Query playerQuery = dbPlayerStatsReference.Child(uuid);
 
@@ -62,7 +61,7 @@ public class FirebaseManager : MonoBehaviour
             {
                 // Snapshot the database from firebase
                 DataSnapshot playerStats = Task.Result;
-                DataSnapshot gameData = Task.Result;
+                //DataSnapshot gameData = Task.Result;
                 DataSnapshot leaderBoards = Task.Result;
                 //check if there is an entry created
                 if (playerStats.Exists)
@@ -72,23 +71,25 @@ public class FirebaseManager : MonoBehaviour
 
                     //create a temp object sp which stores info from the player stats
                     PlayerStats sp = JsonUtility.FromJson<PlayerStats>(playerStats.GetRawJsonValue());
-                    sp.totalTimeSpent += time;
+                    //sp.totalTimeSpent += time;
                     sp.updatedOn = sp.GetTimeUnix();
 
                     // temp lb to store leaderboard
                     LeaderBoard lb = JsonUtility.FromJson<LeaderBoard>(leaderBoards.GetRawJsonValue());
-                    lb.totalTimeSpent += time;
+                    //lb.totalTimeSpent += time;
 
                     // temp gd to store gd
-                    GameData gd = JsonUtility.FromJson<GameData>(gameData.GetRawJsonValue());
-                    gd.updatedOn = gd.GetTimeUnix();
-                    gd.totalTimeSpent += time;
+                    //GameData gd = JsonUtility.FromJson<GameData>(gameData.GetRawJsonValue());
+                    //gd.updatedOn = gd.GetTimeUnix();
+                    //gd.totalTimeSpent += time;
 
                     //continue to update the user total earning throughout the game
-                    sp.totalMoney += money;
-                    UpdatePlayerLeaderBoardEntry(uuid, sp.userName, sp.totalMoney, lb.totalTimeSpent, sp.updatedOn);
+                    sp.noOfMoneyEarned += money;
+                    sp.noOfboxDelivered += boxes;
+                    UpdatePlayerLeaderBoardEntry(uuid, sp.userName, sp.noOfMoneyEarned, sp.noOfboxDelivered, sp.updatedOn);
 
                     // Save the game progress into the database, to be called later to continue the game
+                    /*
                     gd.totalMoney = money;
                     gd.tier1Count = tier1Count;
                     gd.tier2Count = tier2Count;
@@ -101,6 +102,7 @@ public class FirebaseManager : MonoBehaviour
                     gd.rateOfMoney = rateOfMoney;
                     UpdateGameDataEntry(uuid, gd.totalMoney, gd.totalTimeSpent, gd.tier1Count, gd.tier2Count, gd.tier1Cost, gd.tier2Cost, gd.tier1Profit,
                         gd.tier2Profit, gd.upgradeCost, gd.hitPower, gd.rateOfMoney);
+                    */
                     /*
                     if (money > sp.totalMoney)
                     {
@@ -119,15 +121,16 @@ public class FirebaseManager : MonoBehaviour
                 {
                     //CREATE player stats
                     //if there's no existing data, it's our first time player
-                    PlayerStats sp = new PlayerStats(displayName, money, time);
-                    LeaderBoard lb = new LeaderBoard(displayName, money, time);
-                    GameData gd = new GameData(displayName, money, time, tier1Count, tier2Count, tier1Cost, tier2Cost, tier1Profit,
-                        tier2Profit, upgradeCost, hitPower, rateOfMoney);
+                    PlayerStats sp = new PlayerStats(displayName, money, boxes);
+                    //Was this PlayerStats sp = new PlayerStats(displayName, money,  time);
+                    LeaderBoard lb = new LeaderBoard(displayName, money, boxes);
+                    //GameData gd = new GameData(displayName, money, time, tier1Count, tier2Count, tier1Cost, tier2Cost, tier1Profit,
+                        //tier2Profit, upgradeCost, hitPower, rateOfMoney);
 
                     //create new entries into firebase
                     dbPlayerStatsReference.Child(uuid).SetRawJsonValueAsync(sp.PlayerStatsToJson());
                     dbLeaderboardsReference.Child(uuid).SetRawJsonValueAsync(lb.LeaderBoardToJson());
-                    dbGameDataReference.Child(uuid).SetRawJsonValueAsync(gd.GameDataToJson());
+                    //dbGameDataReference.Child(uuid).SetRawJsonValueAsync(gd.GameDataToJson());
                 }
             }
         });
@@ -270,7 +273,7 @@ public class FirebaseManager : MonoBehaviour
 
                     foreach(LeaderBoard lb in leaderBoardList)
                     {
-                        Debug.LogFormat("Leaderboard: Rank {0} Playername {1} Money Earned {2}", rankCounter, lb.userName, lb.totalMoney);
+                        Debug.LogFormat("Leaderboard: Rank {0} Playername {1} Money Earned {2}", rankCounter, lb.userName, lb.noOfboxDelivered, lb.noOfMoneyEarned);
 
                         rankCounter++;
                     }

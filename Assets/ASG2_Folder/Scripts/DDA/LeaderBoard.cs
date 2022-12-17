@@ -22,8 +22,8 @@ public class LeaderBoard
 
     //Properties of our leaderboards
     public string userName;
-    public float totalMoney;
-    public float totalTimeSpent;
+    public int noOfboxDelivered;
+    public int noOfMoneyEarned;
     public long updatedOn;
 
     //simple constructor
@@ -38,11 +38,11 @@ public class LeaderBoard
     /// <param name="userName"></param>
     /// <param name="totalMoney"></param>
     /// <param name="totalTimeSpent"></param>
-    public LeaderBoard(string userName, float totalMoney, float totalTimeSpent)
+    public LeaderBoard(string userName, int noOfboxDelivered, int noOfMoneyEarned)
     {
         this.userName = userName;
-        this.totalMoney = totalMoney;
-        this.totalTimeSpent = totalTimeSpent;
+        this.noOfboxDelivered = noOfboxDelivered;
+        this.noOfMoneyEarned = noOfMoneyEarned;
         this.updatedOn = GetTimeUnix();
     }
 

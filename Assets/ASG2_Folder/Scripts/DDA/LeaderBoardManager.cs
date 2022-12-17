@@ -61,17 +61,19 @@ public class LeaderBoardManager : MonoBehaviour
         foreach(LeaderBoard lb in leaderBoardList)
         {
             // Convert the total time spent from firebase
-            totalTimeSpent = lb.totalTimeSpent;
+            //totalTimeSpent = lb.totalTimeSpent;
 
             // conversion of the time to hour, minute and seconds
+            /*
             int seconds = (int)(totalTimeSpent % 60);
             int minutes = (int)(totalTimeSpent / 60) % 60;
             int hours = (int)(totalTimeSpent / 3600) % 24;
+            */
 
             // Write and display the time
-            string timerString = string.Format("{0:0}:{1:00}:{2:00}", hours, minutes, seconds);
+            //string timerString = string.Format("{0:0}:{1:00}:{2:00}", hours, minutes, seconds);
 
-            Debug.LogFormat("Leaderboard Manager: Rank {0} Playername {1} Money Earned {2} Time Spent {3}", rankCounter, lb.userName, lb.totalMoney, lb.totalTimeSpent) ;
+            Debug.LogFormat("Leaderboard Manager: Rank {0} Playername {1} Money Earned {2} Time Spent {3}", rankCounter, lb.userName, lb.noOfboxDelivered, lb.noOfMoneyEarned) ;
 
             //create prefabs in the position of tableContent
             GameObject entry = Instantiate(rowPrefab, tableContent);
@@ -79,8 +81,8 @@ public class LeaderBoardManager : MonoBehaviour
 
             leaderBoardDetails[0].text = rankCounter.ToString();
             leaderBoardDetails[1].text = lb.userName;
-            leaderBoardDetails[2].text = "$" + (int)lb.totalMoney;
-            leaderBoardDetails[3].text = timerString;
+            leaderBoardDetails[2].text = "$" + lb.noOfMoneyEarned;
+            leaderBoardDetails[3].text = lb.noOfboxDelivered.ToString();
 
             rankCounter++;
         }

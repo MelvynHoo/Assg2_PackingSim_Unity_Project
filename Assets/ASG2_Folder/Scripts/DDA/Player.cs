@@ -13,7 +13,6 @@ public class Player
 {
     /*
         Key: uuid
-        userName
         displayName;
         email
         active
@@ -24,7 +23,6 @@ public class Player
 
     //Properties of our player
     public string userName;
-    public string displayName;
     public string email;
     public bool active;
     public long lastLoggedIn;
@@ -45,10 +43,9 @@ public class Player
     /// <param name="displayName"></param>
     /// <param name="email"></param>
     /// <param name="active"></param>
-    public Player(string userName, string displayName, string email, bool active = true)
+    public Player(string userName, string email, bool active = true)
     {
         this.userName = userName;
-        this.displayName = displayName;
         this.email = email;
         this.active = active;
 
@@ -76,6 +73,6 @@ public class Player
     /// <returns></returns>
     public string PrintPlayer()
     {
-        return String.Format("Player Details: {0} \n User Name: {1}\n Email: {2}\n Active: {3}", this.displayName, this.userName, this.email, this.active);
+        return String.Format("User Name: {0}\n Email: {1}\n Active: {2}", this.userName, this.email, this.active);
     }
 }

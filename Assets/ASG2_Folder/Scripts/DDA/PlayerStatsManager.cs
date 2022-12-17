@@ -38,6 +38,7 @@ public class PlayerStatsManager : MonoBehaviour
 
     // the player money
     int playerMoney;
+    int boxesDelivered;
 
     /// <summary>
     /// Called the update player stat function
@@ -59,23 +60,24 @@ public class PlayerStatsManager : MonoBehaviour
         //Debug.Log("playerstat....: " + playerStats.PlayerStatsToJson());
 
         // Convert the total time spent from firebase
-        totalTimeSpent = playerStats.totalTimeSpent;
+        //totalTimeSpent = playerStats.totalTimeSpent;
 
         // conversion of the time to hour, minute and seconds
-        int seconds = (int)(totalTimeSpent % 60);
-        int minutes = (int)(totalTimeSpent / 60) % 60;
-        int hours = (int)(totalTimeSpent / 3600) % 24;
+        //int seconds = (int)(totalTimeSpent % 60);
+        //int minutes = (int)(totalTimeSpent / 60) % 60;
+        //int hours = (int)(totalTimeSpent / 3600) % 24;
 
         // Write and display the time
-        string timerString = string.Format("{0:0}:{1:00}:{2:00}", hours, minutes, seconds);
+        //string timerString = string.Format("{0:0}:{1:00}:{2:00}", hours, minutes, seconds);
 
         // If there existing player, display the following player money, time spent and last played
         if (playerStats != null)
         {
 
-            playerMoney = (int)playerStats.totalMoney;
+            playerMoney = playerStats.noOfMoneyEarned;
+            boxesDelivered = playerStats.noOfboxDelivered;
             playerMoneyEarned.text = "$" + playerMoney.ToString();
-            playerTimespent.text = timerString;
+            //playerTimespent.text = timerString;
             playerLastPlayed.text = UnixToDateTime(playerStats.updatedOn);
         }
 
