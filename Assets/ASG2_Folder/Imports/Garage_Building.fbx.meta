@@ -5,45 +5,10 @@ ModelImporter:
   internalIDToNameTable: []
   externalObjects:
   - first:
-      type: UnityEngine:Cubemap
-      assembly: UnityEngine.CoreModule
-      name: diffuse_cube
-    second: {fileID: 8900000, guid: c5c68b1c1085133448836c39179e00de, type: 3}
-  - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: GarageBuilding
     second: {fileID: 2100000, guid: 3881f7dbef0c07d49a1d3bb7331e9264, type: 2}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: Garage.tga
-    second: {fileID: 2800000, guid: b364b5c0ad21e9547a043c9b4ece0b1b, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: Garage_Metallic.tga
-    second: {fileID: 2800000, guid: 89f9424d70bca24449ed4a0e3a48c954, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: Garage_Normal.tga
-    second: {fileID: 2800000, guid: b5b9354cf1b0b4440b08a7f7fe02c9ad, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: Garage_Roughness.tga
-    second: {fileID: 2800000, guid: 99d8a0b6af286724e9fe77f7a9e66dbc, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: Grage_light
-    second: {fileID: 2800000, guid: 1f9deb08028ace046b68a845a514e6ff, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: ibl_brdf_lut
-    second: {fileID: 2800000, guid: f13e3e83c2c850c4d8943d88749df468, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -77,7 +42,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 1
+    addColliders: 0
     useSRGBMaterialColor: 1
     sortHierarchyByName: 1
     importVisibility: 1
