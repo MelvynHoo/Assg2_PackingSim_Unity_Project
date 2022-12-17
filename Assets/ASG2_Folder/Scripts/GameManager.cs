@@ -1,14 +1,33 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+using TMPro;
+using UnityEngine.Audio;
+using UnityEngine.XR.Interaction.Toolkit;
+using System.Threading.Tasks;
 
 public class GameManager : MonoBehaviour
 {
-    string itemOne;
-    int countItemOne;
+    /// <summary>
+    /// Firebase and auth manager inputs
+    /// </summary>
+    public MyAuthManager auth;
+    public FirebaseManager firebaseMgr;
+
+
+    int noOfboxDelivered;
+    int noOfMoneyEarned;
+    public bool ClosedBoxBool = false;
+
+    public TextMeshProUGUI boxDelieveredText;
+    public TextMeshProUGUI MoneyEarnedText;
+
     // Start is called before the first frame update
     private void Start()
     {
+
     }
 
     // Update is called once per frame
@@ -16,24 +35,25 @@ public class GameManager : MonoBehaviour
     {
         //itemOne = StaticController.itemOne;
         //Debug.Log(itemOne);
-        ItemOneScoring();
+        Debug.Log("Overall Socket box Check: " + ClosedBoxBool);
     }
 
-    public void ItemOneScoring()
+    public void SocketBox()
     {
-        //Debug.Log("Inside item one scoring:" + itemOne);
-        
-        if (itemOne == "Gaming_Keyboard")
-        {
-            countItemOne += 10;
-            //StaticController.itemOne = "";
-        }
-        if (itemOne == "Gaming_Keyboard")
-        {
-            countItemOne += 10;
-            //StaticController.itemOne = "";
-        }
-        //Debug.Log("Count item one" + countItemOne);
-        
+        ClosedBoxBool = true;
+        UpdateScores();
     }
+
+    public async void UpdateScores()
+    {
+        noOfMoneyEarned += 10;
+        noOfboxDelivered++;
+        Debug.Log("noOfMoneyEarned" + noOfMoneyEarned);
+    
+        await Task.Delay(200);
+        ClosedBoxBool = false;
+        //Debug.Log("Gamemanager closeboxbool: " + ClosedBoxBool);
+    }
+
+
 }

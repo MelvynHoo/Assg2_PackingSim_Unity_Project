@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 740987120518742128}
   - component: {fileID: 2714639317231597182}
   - component: {fileID: 2714639317231597180}
-  - component: {fileID: 2714639317231597183}
   - component: {fileID: 2014900596846502360}
   m_Layer: 7
   m_Name: Squid_Game_Doll
@@ -236,18 +235,6 @@ MonoBehaviour:
   m_ForceGravityOnDetach: 0
   m_RetainTransformParent: 1
   m_AttachPointCompatibilityMode: 0
---- !u!114 &2714639317231597183
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2985112232098581289}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 15d431887bb751f41943b1f10838f119, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &2014900596846502360
 BoxCollider:
   m_ObjectHideFlags: 0

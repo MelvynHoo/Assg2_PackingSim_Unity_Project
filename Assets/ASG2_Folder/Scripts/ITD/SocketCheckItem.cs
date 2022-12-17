@@ -20,7 +20,7 @@ public class SocketCheckItem : MonoBehaviour
 
     private void Update()
     {
-        //allTrueChecker = StaticController.boolBoxToSocket;\
+        //allTrueChecker = StaticController.boolBoxToSocket;
         allTrueChecker = boxManager.overallSocketCheck;
     }
 
@@ -29,7 +29,7 @@ public class SocketCheckItem : MonoBehaviour
     {
        
         IXRSelectInteractable itemOne = socketItemOne.GetOldestInteractableSelected();
-        Debug.Log(itemOne.transform.name + " in socket of " + transform.name);
+        //Debug.Log(itemOne.transform.name + " in socket of " + transform.name);
         //Debug.Log(" name of itemone " + itemOne.ToString());
     }
 
