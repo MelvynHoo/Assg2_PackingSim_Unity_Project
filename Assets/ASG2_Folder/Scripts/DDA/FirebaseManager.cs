@@ -153,8 +153,8 @@ public class FirebaseManager : MonoBehaviour
         //path: leaderboards/$uuid/totalTmeSpent
         //path: leaderboards/$uuid/updatedOn
         dbLeaderboardsReference.Child(uuid).Child("userName").SetValueAsync(userName);
-        dbLeaderboardsReference.Child(uuid).Child("totalMoney").SetValueAsync(totalMoney);
-        dbLeaderboardsReference.Child(uuid).Child("totalTimeSpent").SetValueAsync(totalTimeSpent);
+        dbLeaderboardsReference.Child(uuid).Child("noOfMoneyEarned").SetValueAsync(totalMoney);
+        dbLeaderboardsReference.Child(uuid).Child("noOfboxDelivered").SetValueAsync(totalTimeSpent);
         dbLeaderboardsReference.Child(uuid).Child("updatedOn").SetValueAsync(updatedOn);
     }
 
@@ -173,6 +173,8 @@ public class FirebaseManager : MonoBehaviour
     /// <param name="upgradeCost"></param>
     /// <param name="hitPower"></param>
     /// <param name="rateOfMoney"></param>
+    /// 
+    /*
     public void UpdateGameDataEntry(string uuid, float totalMoney, float totalTimeSpent, int tier1Count, int tier2Count, int tier1Cost,
         int tier2Cost, float tier1Profit, float tier2Profit, int upgradeCost, float hitPower, float rateOfMoney)
     {
@@ -201,7 +203,7 @@ public class FirebaseManager : MonoBehaviour
         dbGameDataReference.Child(uuid).Child("hitPower").SetValueAsync(hitPower);
         dbGameDataReference.Child(uuid).Child("rateOfMoney").SetValueAsync(rateOfMoney);
     }
-
+    
     /// <summary>
     /// To get the game data from the firebase
     /// </summary>
@@ -235,6 +237,7 @@ public class FirebaseManager : MonoBehaviour
         });
         return gameData;
     }
+    */
     /// <summary>
     /// To get the leaderboard data from the firebase
     /// </summary>
