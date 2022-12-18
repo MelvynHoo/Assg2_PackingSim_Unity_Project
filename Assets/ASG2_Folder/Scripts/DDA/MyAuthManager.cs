@@ -85,6 +85,7 @@ public class MyAuthManager : MonoBehaviour
                 string username = usernameRegisterInput.text;
                 //CreateNewPlayer(newPlayer.UserId, username, username, newPlayer.Email);
                 await CreateNewPlayer(newPlayer.UserId, username, newPlayer.Email);
+                Debug.Log("Give me username: " + username);
                 await UpdatePlayerDisplayName(username); //update user's display name in authenticate service 
                 SceneManager.LoadScene(1);
             }
@@ -139,13 +140,13 @@ public class MyAuthManager : MonoBehaviour
     /// </summary>
     /// <param name="displayName"></param>
     /// <returns></returns>
-    public async Task UpdatePlayerDisplayName(string displayName)
+    public async Task UpdatePlayerDisplayName(string userName)
     {
         if(auth.CurrentUser != null) 
         {
             UserProfile profile = new UserProfile
             {
-                DisplayName = displayName
+                DisplayName = userName
             };
             await auth.CurrentUser.UpdateUserProfileAsync(profile).ContinueWithOnMainThread(task =>
             {
@@ -173,16 +174,16 @@ public class MyAuthManager : MonoBehaviour
     /// <param name="userName"></param>
     /// <param name="email"></param>
     /// <returns></returns>
-    public async Task CreateNewPlayer(string uuid, string displayName, string email)
+    public async Task CreateNewPlayer(string uuid, string userName, string email)
     {
-        Player newPlayer = new Player(displayName, email);
+        Player newPlayer = new Player(userName, email);
         Debug.LogFormat("Player Details: {0}", newPlayer.PrintPlayer());
 
         //root/players/$uuid
         await dbReference.Child("players/" + uuid).SetRawJsonValueAsync(newPlayer.GamePlayerToJson());
 
         //Update auth player with new display name => tagging along the username input field
-        await UpdatePlayerDisplayName(displayName);
+        await UpdatePlayerDisplayName(userName);
     }
     /// <summary>
     /// Allow other script to call this function to retrieve the user name
@@ -223,7 +224,7 @@ public class MyAuthManager : MonoBehaviour
                 {
                     loginValidation.gameObject.SetActive(false);
                     FirebaseUser currentPlayer = task.Result;
-                    Debug.LogFormat("Welcome to Stonks Capitalism {0} :: {1}", currentPlayer.UserId, currentPlayer.Email);
+                    Debug.LogFormat("Welcome to PackingSim {0} :: {1}", currentPlayer.UserId, currentPlayer.Email);
                     SceneManager.LoadScene(1);
                 }
             });

@@ -11,11 +11,13 @@ public class BoxManager : MonoBehaviour
     bool itemTwoCheck;
     bool itemThreeCheck;
     public bool overallSocketCheck;
+
     public GameObject openedBox;
     public GameObject closedBox;
     public GameObject theBox;
 
     public XRGrabInteractable XRGrabBoxInteractable;
+    public BoxCollider boxCollider;
     //InteractionLayerMask BoxLayer;
 
     private void Start()
@@ -62,13 +64,16 @@ public class BoxManager : MonoBehaviour
         //Debug.Log("Check for all true");
         if(itemOneCheck == true && itemTwoCheck == true && itemThreeCheck == true)
         {
-            //Debug.Log("All three item is in places");
+            Debug.Log("All three item is in places");
             overallSocketCheck = true;
             theBox.tag = "ClosedBoxTag";
             XRGrabBoxInteractable.interactionLayers = InteractionLayerMask.GetMask("ClosedBox");
             //StaticController.boolBoxToSocket = overallSocketCheck;
             await Task.Delay(200);
             Destroy(openedBox);
+            boxCollider.size = new Vector3(0.9f, 0.45f, 0.9f);
+            boxCollider.center = new Vector3(0f, 0.23f,0f);
+            boxCollider.center = new Vector3(0f, 0.235f,0f);
             closedBox.SetActive(true);
             await Task.Delay(1000);
             overallSocketCheck = false;
