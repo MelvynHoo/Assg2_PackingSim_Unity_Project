@@ -18,6 +18,7 @@ public class MainMenuManager : MonoBehaviour
 {
     // Get the auth manager to the code
     public MyAuthManager authMgr;
+
     // Redundant: Sign out the user
     public GameObject signOutBtn;
     // Redundant: To play the game

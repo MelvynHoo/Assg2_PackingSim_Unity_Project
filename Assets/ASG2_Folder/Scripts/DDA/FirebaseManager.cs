@@ -35,7 +35,7 @@ public class FirebaseManager : MonoBehaviour
     {
         dbPlayerStatsReference = FirebaseDatabase.DefaultInstance.GetReference("playerStats");
         dbLeaderboardsReference = FirebaseDatabase.DefaultInstance.GetReference("leaderboards");
-        dbGameDataReference = FirebaseDatabase.DefaultInstance.GetReference("gameData");
+        //dbGameDataReference = FirebaseDatabase.DefaultInstance.GetReference("gameData");
     }
 
     /// <summary>
@@ -84,8 +84,8 @@ public class FirebaseManager : MonoBehaviour
                     //gd.totalTimeSpent += time;
 
                     //continue to update the user total earning throughout the game
-                    sp.noOfMoneyEarned += money;
-                    sp.noOfboxDelivered += boxes;
+                    sp.noOfMoneyEarned = money;
+                    sp.noOfboxDelivered = boxes;
                     UpdatePlayerLeaderBoardEntry(uuid, sp.userName, sp.noOfMoneyEarned, sp.noOfboxDelivered, sp.updatedOn);
 
                     // Save the game progress into the database, to be called later to continue the game

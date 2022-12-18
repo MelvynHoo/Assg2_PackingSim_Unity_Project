@@ -37,7 +37,7 @@ public class GameManager : MonoBehaviour
     /// TIMER
     /// </summary>
     float currentTime = 0f;
-    float startingTime = 200f;
+    float startingTime = 100f;
 
     // Start is called before the first frame update
     private void Start()
@@ -87,7 +87,7 @@ public class GameManager : MonoBehaviour
         isGameActive = false;
         if (!isPlayerStatUpdated)
         {
-            UpdatePlayerStat(this.noOfMoneyEarned, this.noOfMoneyEarned);
+            UpdatePlayerStat(this.noOfMoneyEarned, this.noOfboxDelivered);
         }
         isPlayerStatUpdated = true;
     }
