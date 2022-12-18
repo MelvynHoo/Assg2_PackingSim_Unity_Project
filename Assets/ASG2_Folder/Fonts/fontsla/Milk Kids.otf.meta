@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 724d9d475fc38004498e19737988273c
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Milk Kids
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 038b6656bb5a2bf46beb52f099f7ad8a, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
