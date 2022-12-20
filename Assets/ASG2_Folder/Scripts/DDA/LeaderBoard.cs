@@ -22,6 +22,7 @@ public class LeaderBoard
 
     //Properties of our leaderboards
     public string userName;
+    public bool active;
     public int noOfboxDelivered;
     public int noOfMoneyEarned;
     public long updatedOn;
@@ -36,11 +37,13 @@ public class LeaderBoard
     /// Constructor of the leadeboard to be send over to firebase
     /// </summary>
     /// <param name="userName"></param>
+    /// /// <param name="active"></param>
     /// <param name="totalMoney"></param>
     /// <param name="totalTimeSpent"></param>
-    public LeaderBoard(string userName, int noOfboxDelivered, int noOfMoneyEarned)
+    public LeaderBoard(string userName, int noOfboxDelivered, int noOfMoneyEarned, bool active = false)
     {
         this.userName = userName;
+        this.active = active;
         this.noOfboxDelivered = noOfboxDelivered;
         this.noOfMoneyEarned = noOfMoneyEarned;
         this.updatedOn = GetTimeUnix();

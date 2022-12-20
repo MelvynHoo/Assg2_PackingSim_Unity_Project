@@ -44,7 +44,10 @@ public class GameManager : MonoBehaviour
     {
         currentTime = startingTime;
         isPlayerStatUpdated = false;
-        
+        if (noOfboxDelivered == 0 && noOfMoneyEarned == 0)
+        {
+            UpdatePlayerStat(this.noOfMoneyEarned, this.noOfboxDelivered);
+        }
     }
 
     // Update is called once per frame

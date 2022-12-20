@@ -43,7 +43,7 @@ public class Player
     /// <param name="displayName"></param>
     /// <param name="email"></param>
     /// <param name="active"></param>
-    public Player(string userName, string email, bool active = true)
+    public Player(string userName, string email, bool active = false)
     {
         this.userName = userName;
         this.email = email;

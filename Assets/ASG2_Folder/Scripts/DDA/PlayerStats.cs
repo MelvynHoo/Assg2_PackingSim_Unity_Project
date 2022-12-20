@@ -23,6 +23,7 @@ public class PlayerStats
     public string userName;
     public int noOfboxDelivered;
     public int noOfMoneyEarned;
+    public bool active;
     public long updatedOn;
     public long createdOn;
 
@@ -38,9 +39,11 @@ public class PlayerStats
     /// <param name="userName"></param>
     /// <param name="totalMoney"></param>
     /// <param name="totalTimeSpent"></param>
-    public PlayerStats(string userName, int noOfMoneyEarned, int noOfboxDelivered)
+    public PlayerStats(string userName, int noOfMoneyEarned, int noOfboxDelivered, bool active = false)
     {
+
         this.userName = userName;
+        this.active = active;
         this.noOfMoneyEarned = noOfMoneyEarned;
         this.noOfboxDelivered = noOfboxDelivered;
     }

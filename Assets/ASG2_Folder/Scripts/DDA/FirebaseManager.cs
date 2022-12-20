@@ -20,6 +20,7 @@ public class FirebaseManager : MonoBehaviour
     DatabaseReference dbPlayerStatsReference;
     DatabaseReference dbLeaderboardsReference;
     DatabaseReference dbGameDataReference;
+    DatabaseReference dbPlayersReference;
 
     /// <summary>
     /// Initialize firebase
@@ -35,7 +36,65 @@ public class FirebaseManager : MonoBehaviour
     {
         dbPlayerStatsReference = FirebaseDatabase.DefaultInstance.GetReference("playerStats");
         dbLeaderboardsReference = FirebaseDatabase.DefaultInstance.GetReference("leaderboards");
+        dbPlayersReference = FirebaseDatabase.DefaultInstance.GetReference("players");
         //dbGameDataReference = FirebaseDatabase.DefaultInstance.GetReference("gameData");
+    }
+
+    public void PlayersStatus(string uuid, string username, string email, bool status)
+    {
+        Debug.Log("What that: " + uuid + " " + status);
+        Query playerQuery = dbPlayersReference.Child(uuid);
+
+        //READ the data first and check whether there ahs been an entry based on my uuid
+        playerQuery.GetValueAsync().ContinueWithOnMainThread(Task =>
+        {
+            if (Task.IsCanceled || Task.IsFaulted)
+            {
+                Debug.LogError("Sorry, there was an error creating your entries, ERROR: " + Task.Exception);
+            }
+            else if (Task.IsCompleted)
+            {
+                // Snapshot the database from firebase
+                DataSnapshot players = Task.Result;
+
+                //check if there is an entry created
+                if (players.Exists)
+                {
+                    Player p = JsonUtility.FromJson<Player>(players.GetRawJsonValue());
+                    //update with entire temp sp object
+                    //path: playerstats/$uuid
+                    p.active = status;
+                    
+                    UpdatePlayersEntry(uuid, p.userName, p.email, p.active);
+                }
+                
+                
+            }
+        });
+    }
+
+  
+
+    public void UpdatePlayersEntry(string uuid, string userName, string email, bool active)
+    {
+        //update only specific properties that we want
+
+        //path: leaderboards/&uuid/username
+        //path: leaderboards/$uuid/totalMoney
+        //path: leaderboards/$uuid/totalTmeSpent
+        //path: leaderboards/$uuid/updatedOn
+        dbPlayersReference.Child(uuid).Child("active").SetValueAsync(active);
+
+        dbLeaderboardsReference.Child(uuid).Child("active").SetValueAsync(active);
+        //dbLeaderboardsReference.Child(uuid).Child("noOfMoneyEarned").SetValueAsync(0);
+        //dbLeaderboardsReference.Child(uuid).Child("noOfboxDelivered").SetValueAsync(0);
+       dbLeaderboardsReference.Child(uuid).Child("userName").SetValueAsync(userName);
+
+        dbPlayerStatsReference.Child(uuid).Child("active").SetValueAsync(active);
+        //dbPlayerStatsReference.Child(uuid).Child("noOfMoneyEarned").SetValueAsync(0);
+        //dbPlayerStatsReference.Child(uuid).Child("noOfboxDelivered").SetValueAsync(0);
+        dbPlayerStatsReference.Child(uuid).Child("userName").SetValueAsync(userName);
+
     }
 
     /// <summary>
