@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7134869686609289037}
   - component: {fileID: 2050900718669847015}
   - component: {fileID: 7213716152272947818}
-  - component: {fileID: 1011891907464371818}
+  - component: {fileID: 3628536341285626296}
   m_Layer: 7
   m_Name: Gaming_Keyboard
   m_TagString: ItemOneTag
@@ -116,7 +116,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &1011891907464371818
+--- !u!114 &3628536341285626296
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -125,7 +125,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8648277280438828696}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ad34abafad169848a38072baa96cdb2, type: 3}
+  m_Script: {fileID: 11500000, guid: 78d69d110851066479b1178c52761864, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_InteractionManager: {fileID: 0}
@@ -134,7 +134,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_InteractionLayers:
-    m_Bits: 2
+    m_Bits: 194
   m_SelectMode: 0
   m_CustomReticle: {fileID: 0}
   m_FirstHoverEntered:

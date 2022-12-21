@@ -30,24 +30,37 @@ public class GameManager : MonoBehaviour
     int noOfMoneyEarned;
     public bool ClosedBoxBool = false;
 
-    public TextMeshProUGUI boxDelieveredText;
+    public TextMeshProUGUI boxDeliveredText;
     public TextMeshProUGUI MoneyEarnedText;
+    public TextMeshProUGUI gameOverboxDeliveredText;
+    public TextMeshProUGUI gameOverMoneyEarnedText;
+    public TextMeshProUGUI timerText;
 
+    public TextMeshProUGUI redirectTimerText;
+    public GameObject gameOverCanvas;
     /// <summary>
     /// TIMER
     /// </summary>
     float currentTime = 0f;
-    float startingTime = 100f;
+    float startingTime = 300f;
+
+    float redirectCurrentTime = 0f;
+    float redirectStartingTime = 6f;
 
     // Start is called before the first frame update
     private void Start()
     {
         currentTime = startingTime;
+        redirectCurrentTime = redirectStartingTime;
+
+
         isPlayerStatUpdated = false;
+        /*
         if (noOfboxDelivered == 0 && noOfMoneyEarned == 0)
         {
             UpdatePlayerStat(this.noOfMoneyEarned, this.noOfboxDelivered);
         }
+        */
     }
 
     // Update is called once per frame
@@ -59,11 +72,35 @@ public class GameManager : MonoBehaviour
         ///TIMER///
         currentTime -= 1 * Time.deltaTime;
         //countdownText.text = currentTime.ToString("0");
-        Debug.Log("Current Time: " + currentTime);
+        //Debug.Log("Current Time: " + currentTime);
 
+        // conversion of the time to hour, minute and seconds
+
+        int currentseconds = (int)(currentTime % 60);
+        int currentminutes = (int)(currentTime / 60) % 60;
+        int currenthours = (int)(currentTime / 3600) % 24;
+
+        // Write and display the time
+        timerText.text = string.Format("{0:0}:{1:00}:{2:00}", currenthours, currentminutes, currentseconds);
+
+        //Debug.Log(hours + ":" + minutes + ":" + seconds);
+        boxDeliveredText.text = "Box Delivered: " + noOfboxDelivered;
+        MoneyEarnedText.text = "Money Earned: $" + noOfMoneyEarned;
+        gameOverboxDeliveredText.text = "Box Delivered: " + noOfboxDelivered;
+        gameOverMoneyEarnedText.text = "Money Earned: $" + noOfMoneyEarned;
         if (currentTime <= 0)
         {
-            GameOver();
+            currentTime = 0;
+            redirectCurrentTime -= 1 * Time.deltaTime;
+            int redirectseconds = (int)(redirectCurrentTime % 60);
+            Debug.Log(redirectseconds);
+            gameOverCanvas.SetActive(true);
+            redirectTimerText.text = string.Format("You will be redirected to Main Menu in {0:0}", redirectseconds);
+            if (redirectCurrentTime <= 0)
+            {
+                redirectCurrentTime = 0;
+                GameOver();
+            }
         }
     }
 
@@ -86,13 +123,20 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
-        currentTime = 0;
         isGameActive = false;
         if (!isPlayerStatUpdated)
         {
             UpdatePlayerStat(this.noOfMoneyEarned, this.noOfboxDelivered);
+            SceneManager.LoadScene(1);
         }
         isPlayerStatUpdated = true;
+    }
+
+    public async void LeaveButton()
+    {
+        UpdatePlayerStat(this.noOfMoneyEarned, this.noOfboxDelivered);
+        await Task.Delay(200);
+        SceneManager.LoadScene(1);
     }
 
     public void UpdatePlayerStat(int currentmoney, int boxesdelivered)

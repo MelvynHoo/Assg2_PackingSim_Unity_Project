@@ -8,6 +8,8 @@ TagManager:
   - ItemTwoTag
   - ItemThreeTag
   - ClosedBoxTag
+  - Right Hand
+  - Left Hand
   layers:
   - Default
   - TransparentFX

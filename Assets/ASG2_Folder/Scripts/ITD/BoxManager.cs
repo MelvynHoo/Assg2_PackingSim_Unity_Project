@@ -18,6 +18,7 @@ public class BoxManager : MonoBehaviour
 
     public XRGrabInteractable XRGrabBoxInteractable;
     public BoxCollider boxCollider;
+    public AudioSource boxAudioSource;
     //InteractionLayerMask BoxLayer;
 
     private void Start()
@@ -69,6 +70,7 @@ public class BoxManager : MonoBehaviour
             theBox.tag = "ClosedBoxTag";
             XRGrabBoxInteractable.interactionLayers = InteractionLayerMask.GetMask("ClosedBox");
             //StaticController.boolBoxToSocket = overallSocketCheck;
+            boxAudioSource.Play();
             await Task.Delay(200);
             Destroy(openedBox);
             boxCollider.size = new Vector3(0.9f, 0.45f, 0.9f);

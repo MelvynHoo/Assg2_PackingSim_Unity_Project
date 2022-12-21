@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5642539180004867448}
   - component: {fileID: -6447367837343998588}
   - component: {fileID: 4547422877992727449}
-  - component: {fileID: 3137476590504731586}
+  - component: {fileID: 8247593939370011593}
   m_Layer: 7
   m_Name: Toy_Fire_Truck
   m_TagString: ItemThreeTag
@@ -116,7 +116,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &3137476590504731586
+--- !u!114 &8247593939370011593
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -125,7 +125,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6147043012477607085}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ad34abafad169848a38072baa96cdb2, type: 3}
+  m_Script: {fileID: 11500000, guid: 78d69d110851066479b1178c52761864, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_InteractionManager: {fileID: 0}
@@ -134,7 +134,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_InteractionLayers:
-    m_Bits: 8
+    m_Bits: 200
   m_SelectMode: 0
   m_CustomReticle: {fileID: 0}
   m_FirstHoverEntered:
