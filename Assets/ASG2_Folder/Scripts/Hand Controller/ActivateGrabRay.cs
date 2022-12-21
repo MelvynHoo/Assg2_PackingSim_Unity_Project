@@ -1,3 +1,10 @@
+/*
+ * Author: Melvyn Hoo
+ * Date: 21 Dec 2022
+ * Description: Deactivate the left and right controller rays
+ * if the player picks something up
+ */
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

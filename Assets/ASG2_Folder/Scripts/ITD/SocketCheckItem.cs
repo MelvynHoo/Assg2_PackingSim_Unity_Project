@@ -1,3 +1,10 @@
+/*
+ * Author: Melvyn Hoo
+ * Date: 21 Dec 2022
+ * Description: To check if the box have all three item in
+ * so that it can destroy the item inside
+ */
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

@@ -1,3 +1,11 @@
+/*
+ * Author: Melvyn Hoo
+ * Date: 21 Dec 2022
+ * Description: The grab offset is to offset the grab, so the player does not
+ * really have to actually grab fully on the object
+ */
+
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

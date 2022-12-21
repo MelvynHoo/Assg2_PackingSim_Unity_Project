@@ -39,7 +39,13 @@ public class FirebaseManager : MonoBehaviour
         dbPlayersReference = FirebaseDatabase.DefaultInstance.GetReference("players");
         //dbGameDataReference = FirebaseDatabase.DefaultInstance.GetReference("gameData");
     }
-
+    /// <summary>
+    /// To update the player status
+    /// </summary>
+    /// <param name="uuid"></param>
+    /// <param name="username"></param>
+    /// <param name="email"></param>
+    /// <param name="status"></param>
     public void PlayersStatus(string uuid, string username, string email, bool status)
     {
         Debug.Log("What that: " + uuid + " " + status);
@@ -73,8 +79,13 @@ public class FirebaseManager : MonoBehaviour
         });
     }
 
-  
-
+  /// <summary>
+  /// To tell firebase to update the active(Status)
+  /// </summary>
+  /// <param name="uuid"></param>
+  /// <param name="userName"></param>
+  /// <param name="email"></param>
+  /// <param name="active"></param>
     public void UpdatePlayersEntry(string uuid, string userName, string email, bool active)
     {
         //update only specific properties that we want
@@ -147,30 +158,6 @@ public class FirebaseManager : MonoBehaviour
                     sp.noOfboxDelivered += boxes;
                     UpdatePlayerLeaderBoardEntry(uuid, sp.userName, sp.noOfMoneyEarned, sp.noOfboxDelivered, sp.updatedOn);
 
-                    // Save the game progress into the database, to be called later to continue the game
-                    /*
-                    gd.totalMoney = money;
-                    gd.tier1Count = tier1Count;
-                    gd.tier2Count = tier2Count;
-                    gd.tier1Cost = tier1Cost;
-                    gd.tier2Cost = tier2Cost;
-                    gd.tier1Profit = tier1Profit;
-                    gd.tier2Profit = tier2Profit;
-                    gd.upgradeCost = upgradeCost;
-                    gd.hitPower = hitPower;
-                    gd.rateOfMoney = rateOfMoney;
-                    UpdateGameDataEntry(uuid, gd.totalMoney, gd.totalTimeSpent, gd.tier1Count, gd.tier2Count, gd.tier1Cost, gd.tier2Cost, gd.tier1Profit,
-                        gd.tier2Profit, gd.upgradeCost, gd.hitPower, gd.rateOfMoney);
-                    */
-                    /*
-                    if (money > sp.totalMoney)
-                    {
-                        sp.totalMoney = money;
-                        UpdatePlayerLeaderBoardEntry(uuid, sp.totalMoney, sp.updatedOn);
-
-                    }
-                    */
-
                     //update with entire temp sp object
                     //path: playerstats/$uuid
                     dbPlayerStatsReference.Child(uuid).SetRawJsonValueAsync(sp.PlayerStatsToJson());
@@ -217,86 +204,7 @@ public class FirebaseManager : MonoBehaviour
         dbLeaderboardsReference.Child(uuid).Child("updatedOn").SetValueAsync(updatedOn);
     }
 
-    /// <summary>
-    /// Update new entries of the gamedata
-    /// </summary>
-    /// <param name="uuid"></param>
-    /// <param name="totalMoney"></param>
-    /// <param name="totalTimeSpent"></param>
-    /// <param name="tier1Count"></param>
-    /// <param name="tier2Count"></param>
-    /// <param name="tier1Cost"></param>
-    /// <param name="tier2Cost"></param>
-    /// <param name="tier1Profit"></param>
-    /// <param name="tier2Profit"></param>
-    /// <param name="upgradeCost"></param>
-    /// <param name="hitPower"></param>
-    /// <param name="rateOfMoney"></param>
-    /// 
-    /*
-    public void UpdateGameDataEntry(string uuid, float totalMoney, float totalTimeSpent, int tier1Count, int tier2Count, int tier1Cost,
-        int tier2Cost, float tier1Profit, float tier2Profit, int upgradeCost, float hitPower, float rateOfMoney)
-    {
-        //update only specific properties that we want
-
-        //path: gameData/$uuid/totalMoney
-        //path: gameData/$uuid/totalTmeSpent
-        //path: gameData/$uuid/tier1Count
-        //path: gameData/$uuid/tier2Count
-        //path: gameData/$uuid/tier1Cost
-        //path: gameData/$uuid/tier2Cost
-        //path: gameData/$uuid/tier1Profit
-        //path: gameData/$uuid/tier2Profit
-        //path: gameData/$uuid/upgradeCost
-        //path: gameData/$uuid/hitPower
-        //path: gameData/$uuid/rateOfMoney
-        dbGameDataReference.Child(uuid).Child("totalMoney").SetValueAsync(totalMoney);
-        dbGameDataReference.Child(uuid).Child("totalTimeSpent").SetValueAsync(totalTimeSpent);
-        dbGameDataReference.Child(uuid).Child("tier1Count").SetValueAsync(tier1Count);
-        dbGameDataReference.Child(uuid).Child("tier2Count").SetValueAsync(tier2Count);
-        dbGameDataReference.Child(uuid).Child("tier1Cost").SetValueAsync(tier1Cost);
-        dbGameDataReference.Child(uuid).Child("tier2Cost").SetValueAsync(tier2Cost);
-        dbGameDataReference.Child(uuid).Child("tier1Profit").SetValueAsync(tier1Profit);
-        dbGameDataReference.Child(uuid).Child("tier2Profit").SetValueAsync(tier2Profit);
-        dbGameDataReference.Child(uuid).Child("upgradeCost").SetValueAsync(upgradeCost);
-        dbGameDataReference.Child(uuid).Child("hitPower").SetValueAsync(hitPower);
-        dbGameDataReference.Child(uuid).Child("rateOfMoney").SetValueAsync(rateOfMoney);
-    }
     
-    /// <summary>
-    /// To get the game data from the firebase
-    /// </summary>
-    /// <param name="uuid"></param>
-    /// <returns></returns>
-    public async Task<GameData> GetGameData(string uuid)
-    {
-        Query q = dbGameDataReference.Child(uuid).LimitToFirst(1);
-        GameData gameData = null;
-
-        await dbGameDataReference.GetValueAsync().ContinueWithOnMainThread(task =>
-        {
-            if (task.IsCanceled || task.IsFaulted)
-            {
-                Debug.LogError("Sorry, there was an error retrieving player stats : ERROR " + task.Exception);
-            }
-            else if (task.IsCompleted)
-            {
-                DataSnapshot ds = task.Result;//path -> playerstats/$uuid
-                if (ds.Child(uuid).Exists)
-                {
-
-                    //path to the datasapshot playerstats/$uuid/<we want this values>
-                    gameData = JsonUtility.FromJson<GameData>(ds.Child(uuid).GetRawJsonValue());
-
-                    Debug.Log("ds... : " + ds.GetRawJsonValue());
-                    Debug.Log("Player stats values.." + gameData.GameDataToJson());
-
-                }
-            }
-        });
-        return gameData;
-    }
-    */
     /// <summary>
     /// To get the leaderboard data from the firebase
     /// </summary>

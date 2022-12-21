@@ -1,3 +1,9 @@
+/*
+ * Author: Melvyn Hoo
+ * Date: 21 Dec 2022
+ * Description: The box manager manages the box and its content
+ */
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -37,21 +43,27 @@ public class BoxManager : MonoBehaviour
         //Debug.Log("Overall Socket Check: " + overallSocketCheck);
         //UpdateCheckforSocket();
     }
-
+    /// <summary>
+    /// Check if item one is true
+    /// </summary>
     public void SocketItemOne()
     {
         itemOneCheck = true;
         //Debug.Log("Socket Item One is " + itemOneCheck);
         UpdateCheckforSocket();
     }
-
+    /// <summary>
+    /// Check if item two is true
+    /// </summary>
     public void SocketItemTwo()
     {
         itemTwoCheck = true;
         //Debug.Log("Socket Item Two is " + itemTwoCheck);
         UpdateCheckforSocket();
     }
-
+    /// <summary>
+    /// Check if item three is true
+    /// </summary>
     public void SocketItemThree()
     {
         itemThreeCheck = true;
@@ -59,7 +71,9 @@ public class BoxManager : MonoBehaviour
 
         UpdateCheckforSocket();
     }
-
+    /// <summary>
+    /// Once all item is true, the script will activate
+    /// </summary>
     public async void UpdateCheckforSocket()
     {
         //Debug.Log("Check for all true");

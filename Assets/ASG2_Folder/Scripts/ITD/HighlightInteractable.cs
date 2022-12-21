@@ -1,3 +1,9 @@
+/*
+ * Author: Melvyn Hoo
+ * Date: 21 Dec 2022
+ * Description:  highlight the item when is hovering over the socket
+ */
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

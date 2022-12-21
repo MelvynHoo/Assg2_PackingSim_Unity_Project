@@ -1,3 +1,11 @@
+/*
+ * Author: Melvyn Hoo
+ * Date: 21 Dec 2022
+ * Description: To activate the teleportation ray and not teleportation on where
+ * it is not suppose to go
+ */
+
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

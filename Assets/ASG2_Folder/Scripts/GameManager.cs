@@ -1,3 +1,11 @@
+/*
+ * Author: Melvyn Hoo
+ * Date: 21 Dec 2022
+ * Description: Game Manager handle everything such as count the score and sending it
+ * over to the firebase, opening game over menu and tracking scores.
+ * and calling of dataset to the game
+ */
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -26,6 +34,9 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public bool isPlayerStatUpdated;
 
+    /// <summary>
+    /// Store player game progress
+    /// </summary>
     int noOfboxDelivered;
     int noOfMoneyEarned;
     public bool ClosedBoxBool = false;
@@ -39,11 +50,14 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI redirectTimerText;
     public GameObject gameOverCanvas;
     /// <summary>
-    /// TIMER
+    /// Timer for game
     /// </summary>
     float currentTime = 0f;
     float startingTime = 300f;
 
+    /// <summary>
+    /// Timer for gameover
+    /// </summary>
     float redirectCurrentTime = 0f;
     float redirectStartingTime = 6f;
 
@@ -88,6 +102,8 @@ public class GameManager : MonoBehaviour
         MoneyEarnedText.text = "Money Earned: $" + noOfMoneyEarned;
         gameOverboxDeliveredText.text = "Box Delivered: " + noOfboxDelivered;
         gameOverMoneyEarnedText.text = "Money Earned: $" + noOfMoneyEarned;
+
+        // When game time hit over, the game over will start counting
         if (currentTime <= 0)
         {
             currentTime = 0;
@@ -104,12 +120,18 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// To call update scores
+    /// </summary>
     public void SocketBox()
     {
         ClosedBoxBool = true;
         UpdateScores();
     }
 
+    /// <summary>
+    /// To update scores
+    /// </summary>
     public async void UpdateScores()
     {
         noOfMoneyEarned += 10;
@@ -121,6 +143,9 @@ public class GameManager : MonoBehaviour
         //Debug.Log("Gamemanager closeboxbool: " + ClosedBoxBool);
     }
 
+    /// <summary>
+    /// To be call when timer hits 0, game over.
+    /// </summary>
     public void GameOver()
     {
         isGameActive = false;
@@ -132,6 +157,10 @@ public class GameManager : MonoBehaviour
         isPlayerStatUpdated = true;
     }
 
+    /// <summary>
+    /// Leave button update whatever the player progress is currently on
+    /// and send it over to firebase
+    /// </summary>
     public async void LeaveButton()
     {
         UpdatePlayerStat(this.noOfMoneyEarned, this.noOfboxDelivered);

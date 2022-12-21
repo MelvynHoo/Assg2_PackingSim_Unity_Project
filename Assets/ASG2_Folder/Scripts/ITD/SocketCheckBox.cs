@@ -1,3 +1,10 @@
+/*
+ * Author: Melvyn Hoo
+ * Date: 21 Dec 2022
+ * Description: Destroy the box in the delivery truck when it
+ * has the closed box only
+ */
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

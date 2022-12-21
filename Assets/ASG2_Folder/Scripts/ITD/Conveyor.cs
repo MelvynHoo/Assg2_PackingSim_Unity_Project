@@ -1,3 +1,9 @@
+/*
+ * Author: Melvyn Hoo
+ * Date: 21 Dec 2022
+ * Description: A conveyor script to move the item like a conveyor belt
+ */
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

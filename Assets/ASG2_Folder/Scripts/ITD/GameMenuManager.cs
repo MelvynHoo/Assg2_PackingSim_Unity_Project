@@ -1,3 +1,9 @@
+/*
+ * Author: Melvyn Hoo
+ * Date: 21 Dec 2022
+ * Description: Game Menu Manager handle the VR menu that spawn in front of player
+ */
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -19,6 +25,11 @@ public class GameMenuManager : MonoBehaviour
     }
 
     // Update is called once per frame
+
+    /// <summary>
+    /// This update where the player position, once activated, 
+    /// the menu will appear in front of them
+    /// </summary>
     void Update()
     {
         if(showButton.action.WasPressedThisFrame())
